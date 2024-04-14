@@ -11,7 +11,8 @@ COPY . .
 
 # Cài đặt Django và các gói khác trong một môi trường ảo và sử dụng người dùng appuser
 RUN python -m venv venv
-RUN source venv/bin/activate && pip install -r requirements.txt
+RUN . venv/bin/activate && pip install -r requirements.txt
+
 
 # Sao chép tất cả các tệp trong thư mục hiện tại vào thư mục /app trong container
 COPY . .
