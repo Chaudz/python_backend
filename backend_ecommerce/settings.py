@@ -135,11 +135,12 @@ from dotenv import load_dotenv,dotenv_values
 
 config = dotenv_values(".env")
 
-cloudinary.config(
-  cloud_name = 'doguzyfn7',
-  api_key = '518734153334589',
-  api_secret ='sYN2nrlGdfi-KIL_LU3GiRLP-Dw'
+cloudinary.config( 
+  cloud_name = config['CLOUDINARY_CLOUD_NAME'],
+  api_key = config['CLOUDINARY_API_KEY'],
+  api_secret = config['CLOUDINARY_API_SECRET'],
 )
+
 CORS_ALLOWED_ORIGINS = [
      "http://localhost:3000", #cho phep domain khac truy cap
 ]
