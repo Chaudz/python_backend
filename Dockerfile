@@ -9,9 +9,9 @@ WORKDIR /app
 # Sao chép tệp requirements.txt vào thư mục /app
 COPY requirements.txt requirements.txt
 
-# Cài đặt các gói trong một môi trường ảo và sử dụng người dùng appuser
+# Cài đặt Django và các gói khác trong một môi trường ảo và sử dụng người dùng appuser
 RUN python -m venv venv
-RUN /bin/bash -c "source venv/bin/activate && pip install -r requirements.txt"
+RUN /bin/bash -c "source venv/bin/activate && pip install -r requirements.txt django"
 
 # Sao chép tất cả các tệp trong thư mục hiện tại vào thư mục /app trong container
 COPY . .
